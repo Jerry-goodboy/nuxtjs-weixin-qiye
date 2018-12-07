@@ -1,0 +1,542 @@
+html,body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  font-family: 'Microsoft Yahei', '微软雅黑'!important;
+  font-size: 15px!important;
+}
+
+/*------------------滚动条----------------------*/
+*::-webkit-scrollbar {width:7px; height:10px; background-color:transparent;} /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+*::-webkit-scrollbar-track {background-color:#f0f6ff;  } /*定义滚动条轨道 内阴影+圆角*/
+*::-webkit-scrollbar-thumb {background-color:#e0e0e0; border-radius:6px;} /*定义滑块 内阴影+圆角*/
+
+.leaflet-control-ruler {
+	margin-top: 0px!important;
+	margin-right: 230px!important;
+  border: none!important;
+}
+
+.leaflet-control-ruler .icon-ruler {
+  width: 106px!important;
+  text-align: center!important;
+  padding-right: 10px!important;
+  background: none!important;
+  font-size: 15px!important;
+  box-sizing: border-box!important;
+}
+
+.leaflet-control-ruler .icon-ruler:hover {
+  text-align: center!important;
+  font-size: 15px!important;
+  color: #409EFF!important;
+  background: #f4f4f4!important;
+}
+
+.leaflet-bottom.leaflet-left,
+.leaflet-top.leaflet-right {
+  top: 10px!important;
+  right: 10px!important;
+  background: #fff!important;
+  padding: 3px 10px 3px 10px!important;
+  box-sizing: border-box!important;
+}
+
+.leaflet-bottom.leaflet-left {
+	right: 10px!important;	
+	left: auto!important;	
+	bottom: auto!important;	
+	z-index: 99999999!important;
+  padding-left: 0px!important;
+  padding-right: 0px!important;
+  display: none!important;
+}
+
+.leaflet-top.leaflet-right {
+  width: 350px!important;
+  height: 36px!important;
+  z-index: 99999991!important;
+}
+
+.leaflet-control-easyPrint {
+	margin-top: 0px!important;
+  margin-bottom: 0px!important;
+  margin-left: 0px!important;
+	margin-right: 6px!important;	
+  border: none!important; 
+}
+
+.icon-custom {
+  /* 通过设置 font-size 来改变图标大小 */
+  width: 24px; 
+  height: 24px;
+  /* 图标和文字相邻时，垂直对齐 */
+  vertical-align: middle;
+  /* 通过设置 color 来改变 SVG 的颜色/fill */
+  fill: currentColor;
+  /* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
+     normalize.css 中也包含这行 */
+  overflow: hidden;
+  margin-right: 8px;
+}
+
+.leaflet-control-fullmap .icon-custom,
+.leaflet-control-ruler .icon-custom {
+  width: 18px; 
+  height: 18px;
+}
+
+.leaflet-control-toggleBasemap .icon-custom {
+  width: 22px; 
+  height: 22px;
+}
+
+.leaflet-control-measure {
+  margin-top: -24px!important;
+  margin-right: 120px!important;  
+  border-top: none!important; 
+  border-bottom: none!important; 
+  border-left: 1px solid #aaa!important; 
+  border-right: 1px solid #aaa!important; 
+  border-radius: 0px!important; 
+  height: 18px!important;
+}
+
+.leaflet-control-measure-toggle {
+  background: none!important;
+  text-indent: 0px!important;
+  width: 106px!important;
+  font-size: 15px!important;
+  margin-top: -6px!important; 
+}
+
+.leaflet-control-measure-interaction {
+  border: 1px solid #ccc!important; 
+  margin-top: -10px!important; 
+  margin-left: -1px!important; 
+  margin-right: -1px!important; 
+  width: 195px!important; 
+  background: #fff!important;
+}
+
+.toolbar-popup-border {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.leaflet-control-easyPrint-button-export {
+  width: 80px!important;
+  border: none!important;
+  /*background: none!important;*/
+  font-size: 15px!important;
+}
+
+.easyPrintHolder {
+  margin-top: 0px!important;
+  margin-bottom: 0px!important; 
+  margin-left: 0px!important; 
+  padding-left: 0px!important; 
+  height: 30px!important; 
+}
+
+
+/*********** right panel begin ******************/
+
+.cs-right-panel-has-popup .cs-info-pane-content {
+  width: 350px;
+  padding: 10px 5px 0px 20px;
+  box-sizing: border-box;
+}
+
+.cs-right-panel-has-popup .cs-more-contents-box {
+  height: 300px;
+  overflow: auto;
+}
+
+.cs-right-panel-has-popup .cs-more-contents-box.cs-more-contents-fixed-height {
+  height: 350px;
+  overflow: auto;
+}
+
+.cs-right-panel-has-popup .cs-more-btns-box {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  /*border-left: 1px solid #ccc;*/
+  margin-top: 10px;
+  margin-left: -20px;
+  margin-right: -5px;
+  padding: 10px 20px;
+  /*background: rgba(239,250,255,1);*/
+}
+
+.cs-right-panel-has-popup .info-pane-table-expand {
+  font-size: 0;
+}
+
+.cs-right-panel-has-popup .info-pane-table-expand .el-form-item {
+  margin-right: 0!important;
+  margin-bottom: 0!important;
+  width: 100%!important;
+}
+
+.cs-right-panel-has-popup .info-pane-table-expand .el-form-item__label {
+  width: auto!important;
+  color: #565656!important;
+  float: left!important;
+  display: block!important;
+  line-height: 25px!important;
+  font-size: 15px;
+  font-weight: bold!important; 
+}
+
+.cs-right-panel-has-popup .info-pane-table-expand .el-form-item__content {
+  line-height: 25px!important;
+  display: block!important;
+  float: left!important;
+  max-width: 68%!important;
+  font-size: 15px;   
+  word-break: break-all;
+  color: #848484!important;
+}
+.cs-right-panel-has-popup .cs-info-pane {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  z-index: 100000;
+  background: #fff;
+  padding: 0px;
+}
+
+.cs-right-panel-has-popup .cs-info-pane-close {
+  right: 6px!important;
+  position: absolute!important;
+  font-size: 15px!important;
+  padding: 2px!important;
+  background: transparent!important;
+  border: none!important;
+  color: #fff!important;
+}
+
+.cs-right-panel-has-popup .cs-info-pane-title {
+  text-align: left;
+  padding: 5px;
+  padding-left: 20px;
+  margin: 0px;
+  font-size: 15px;
+  font-weight: bold;
+  background: #409eff;
+  color: #fff;
+  box-sizing: border-box;
+  height: 30px;
+}
+
+
+/*********** right panel end ******************/
+
+/*********** right panel dialog begin ******************/
+
+.cs-car-total-inner-box .el-tabs__header {
+  margin: 0 0 10px!important;
+}
+
+.cs-tabs-box {
+  margin-top: 20px!important;
+  background: #fff!important;
+  height: 95%!important;
+}
+
+.cs-car-right-panel-tabs-content {
+  height: 310px!important; 
+  overflow: auto!important;
+}
+
+.cs-car-dialog-h3 {
+  /*padding: 10px 20px!important;
+  height: 10%!important;*/
+  height: 40px!important;
+  line-height: 40px!important;
+  padding: 0px!important;
+  padding-left: 20px!important;
+
+  box-sizing: border-box!important;
+  position: relative;
+}
+
+.cs-btn-car-hotmap {
+  right: 16px!important;
+  position: absolute!important;
+  padding: 3px 6px!important;
+  font-size: 12px!important;
+}
+
+.cs-btn-car-close {
+  top: 10px!important;
+  right: 10px!important;
+  position: absolute!important;
+  font-size: 15px!important;
+  padding: 2px!important;
+  background: transparent!important;
+  border: none!important;
+  color: #fff!important;
+}
+
+.cs-tabs-content {
+  width: 100%!important;
+  height: calc(90% - 30px)!important;
+  overflow: auto!important;
+  box-sizing: border-box!important;
+  padding-bottom: 10px!important;
+  padding: 0px 20px!important;
+}
+
+/*-------------- element self begin -------------------------*/
+.el-dialog__headerbtn:focus .el-dialog__close, 
+.el-dialog__headerbtn:hover .el-dialog__close,
+.el-dialog__headerbtn .el-dialog__close {
+  color: #fff!important;
+}
+
+.el-dialog__body {
+  width: 60%!important;
+  height: 70%!important;
+  margin: 0 auto!important;
+}
+
+.el-dialog__wrapper {
+  z-index: 987654321!important;
+}
+
+.el-dialog {
+  background: rgba(100,100,100,0.8)!important;
+}
+/*-------------- element self end -------------------------*/
+
+/*-------------- dialog contents begin -------------------------*/
+.car-table-expand {
+  font-size: 0!important; 
+}
+
+.car-table-expand .el-form-item__label {
+  width: auto!important; 
+  color: #565656!important; 
+  font-weight: bold!important; 
+}
+
+.car-table-expand .el-form-item__content {
+  color: #848484!important; 
+}
+
+.car-table-expand .el-form-item {
+  margin-right: 0!important; 
+  margin-bottom: 0!important; 
+  width: 50%!important; 
+}
+
+.car-table-expand .el-form-item__label,
+.car-table-expand .el-form-item__content {
+  line-height: 25px!important;    
+  word-break: break-all!important; 
+}
+
+/*-------------- dialog contents end -------------------------*/
+
+/*********** right panel dialog end ******************/
+
+hr {
+  margin-top: 10px!important; 
+  margin-bottom: 10px!important; 
+}
+
+/* custom leaflet control */
+.leaflet-control-fullmap {
+  margin-top: -24px!important;
+  margin-right: 114px!important;  
+  border-top: none!important; 
+  border-bottom: none!important; 
+  border-left: 1px solid #aaa!important; 
+  border-right: 0px solid #aaa!important; 
+  border-radius: 0px!important; 
+  height: 18px!important;
+}
+
+.leaflet-control-fullmap-a {
+  /*background: none!important;*/
+  text-indent: 0px!important;
+  width: 110px!important;
+  font-size: 15px!important;
+  margin-top: -6px!important; 
+  cursor: pointer!important; 
+}
+
+.leaflet-control-fullmap-a:hover {
+  color: #409EFF!important;  
+}
+
+.leaflet-control-toggleBasemap {
+  margin-top: -24px!important;
+  margin-right: 0px!important;  
+  border-top: none!important; 
+  border-bottom: none!important; 
+  border-left: 1px solid #aaa!important; 
+  border-right: 0px solid #aaa!important; 
+  border-radius: 0px!important; 
+  height: 18px!important;
+}
+
+.leaflet-control-toggleBasemap-a {
+  /*background: none!important;*/
+  text-indent: 0px!important;
+  width: 108px!important;
+  font-size: 15px!important;
+  margin-top: -6px!important; 
+  cursor: pointer!important; 
+}
+
+.leaflet-control-toggleBasemap-a:hover {
+  color: #409EFF!important;  
+}
+
+/*,.leaflet-control-toggleBasemap-a*/
+.leaflet-control-keepBasemap-a {
+  cursor: pointer!important; 
+}
+
+.el-loading-mask.is-fullscreen {
+  z-index: 987654326!important;
+}
+
+.cs-label-div {
+  min-width: 200px;
+  width: auto;
+  max-width: 300px;
+  text-align: center; 
+}
+
+.cs-label-div div {
+  min-width: 200px;
+  width: auto;
+  max-width: 300px;
+  transform: translate(-50%,-130%);
+  text-align: center; 
+  color: #00f;
+  background-color: #fff;
+  font-size: 13px!important;
+}
+
+.leaflet-tooltip-top {
+  margin-top: -16px!important;
+  font-size: 13px!important;
+}
+
+.el-autocomplete-suggestion.el-popper {
+  z-index: 9876543321!important;
+}
+
+/* car total block box begin */
+.cs-info-car {
+  top: 270px!important;
+}
+
+.cs-car-total-box {
+  height: 390px;
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  z-index: 100000;
+  background: rgb(255, 255, 255);
+  padding: 0px;
+  box-sizing: border-box;
+  width: 350px;
+}
+
+.cs-car-total-title {
+  font-size: 16px!important;
+  color: #409eff!important;    
+  margin-bottom: 5px;
+}
+
+.cs-car-total-span-block-box {
+  margin-bottom: 6px;
+}
+
+.cs-car-total-span-block {
+  display: inline-block;
+  width: 48%;
+  height: 35px;
+  line-height: 35px;
+  font-size: 14px!important;
+  color: #fff;
+  text-align: center;
+}
+
+.cs-car-total-span-block:last-child {
+  background: #8e73ff;
+  margin-left: 4%;
+}
+
+.cs-car-total-span-block:first-child {
+  background: #ffb000;
+  margin-left: 0%;
+}
+
+.cs-car-total-span-big {
+  font-size: 28px!important;
+  vertical-align: bottom;
+}
+
+.cs-car-total-span-list-box {
+  height: 90px;
+  overflow: hidden;
+}
+
+.cs-car-total-span-list {
+  display: inline-block;
+  width: 50%;
+  height: 28px;
+  line-height: 28px;
+  font-size: 14px!important;
+  text-align: center;
+  border-bottom: 2px dashed #ccc;
+}
+
+/*
+.leaflet-control-toggleBasemap,
+*/
+.leaflet-control-zoom,
+.leaflet-control-keepBasemap {
+  border: 1px solid rgba(0,0,0,0.2)!important;
+  margin-bottom: 2px!important;
+}
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+  color: #6c6c6c!important;
+  font-size: 24px!important;
+}
+
+/*.cs-car-tree-type-box .el-tree-node__expand-icon.el-icon-caret-right.is-leaf {
+  background: url('/icon/tree_car.png');
+  background-position: center!important;
+  background-repeat: no-repeat!important;
+} */   
+
+.cs-car-tree-type-box .el-tree-node__expand-icon.el-icon-caret-right.is-leaf,
+.cs-car-tree-fleet-box .el-tree-node__expand-icon.el-icon-caret-right.is-leaf {
+  width: 0px!important;
+}   
+
+.cs-right-panel-has-popup .info-pane-table-expand.info-pane-table-expand-car .el-form-item {
+  width: 50%!important;
+  margin-top: 10px!important;
+}
+
+.cs-map-without-control .leaflet-top.leaflet-right {
+  width: 0px!important;
+  height: 0px!important;
+  z-index: -9999!important;
+  display: none!important;
+}
