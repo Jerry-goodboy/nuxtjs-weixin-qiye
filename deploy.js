@@ -1,12 +1,12 @@
 var arguments = process.argv.splice(2);
 var ipStartNo = arguments[0];
 
-var mapServerIp = "http://192.168.16.49:6080/";
-var webServerIp = "192.168.16.49:8081";
+var mapServerIp = "http://test/";
+var webServerIp = "test";
 
 if (ipStartNo == 10) {
-	mapServerIp = "http://10.128.71.49:6080/";
-	webServerIp = "10.163.200.210:8082";
+	mapServerIp = "http://test/";
+	webServerIp = "test";
 	console.log('所传递的参数是：', arguments);
 }
 
@@ -37,8 +37,8 @@ if(isDirectory(apiPathFolder)){
 		if (isFile(fileName) && exc.test(val)) {
 			var data = readFile(fileName);
 			
-      var res = data.replace(/localhost:8099/g, webServerIp)
-      							.replace(/http:\/\/192.168.16.49:6080\//g, mapServerIp);
+      var res = data.replace(/localhost:9999/g, webServerIp)
+      							.replace(/http:\/\/test\//g, mapServerIp);
 
 			fs.writeFileSync(fileName, res);
 		}
@@ -51,7 +51,7 @@ if(isDirectory(libMonitorFolder)){
 	
 	var data = readFile(fileName);
 		
-  var res = data.replace(/localhost:8099/g, webServerIp);
+  var res = data.replace(/localhost:9999/g, webServerIp);
 
 	fs.writeFileSync(fileName, res);
 }
@@ -62,7 +62,7 @@ if(isDirectory(proxyFolder)){
 	
 	var data = readFile(fileName);
 		
-  var res = data.replace(/http:\/\/192.168.16.49:6080\//g, mapServerIp);
+  var res = data.replace(/http:\/\/test\//g, mapServerIp);
 
 	fs.writeFileSync(fileName, res);
 }
